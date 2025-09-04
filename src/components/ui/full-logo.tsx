@@ -16,7 +16,7 @@ export const FullLogo: React.FC<Props> = ({ textClassName, logoClassName }) => {
         )}
       />
       <h1 className={classNames("text-base text-gray-800", textClassName)}>
-        Tania
+        Redline AI
       </h1>
     </div>
   );

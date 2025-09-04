@@ -11,7 +11,7 @@ export const ChatLayout: React.FC<IChatLayoutProps> = ({ children }) => {
   return (
     <main className="relative h-[calc(100vh-73px)] overflow-y-auto flex flex-row">
       {/* Sidebar */}
-      <aside className="sticky top-0 h-full px-[40px] py-8">
+      <aside className="sticky top-0 h-full px-[40px] py-8 w-[350px]">
         <ChatSideBar />
       </aside>
 
@@ -19,9 +19,9 @@ export const ChatLayout: React.FC<IChatLayoutProps> = ({ children }) => {
       <section className="flex-1 py-8">{children}</section>
 
       {/* Right Panel */}
-      <aside className="sticky top-0 h-full overflow-y-auto px-[40px] py-8">
+      {/* <aside className="sticky top-0 h-full overflow-y-auto px-[40px] py-8">
         <ChatRightPanel />
-      </aside>
+      </aside> */}
     </main>
   );
 };

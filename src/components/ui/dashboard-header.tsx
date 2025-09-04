@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { CircleAvatar } from "./circle-avatar";
 import { Popover } from "./popover";
 import defaultAvatar from "@/assets/images/png/default_avatar.png";
-import SearchIcon from "@/assets/images/svg/search.svg";
+import SearchIcon from "@/assets/images/svg/search-normal.svg";
 import { useAuthStore } from "@/store/auth";
 import { ProfileMenu } from "./profile-menu";
 import { Interaction } from "../interaction";
@@ -46,39 +46,59 @@ export const DashboardHeader = () => {
         animate="visible"
         variants={headerVariants}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[73px]">
-          <motion.div className="flex justify-between items-center h-full">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 h-[73px]">
+          <motion.div className=" w-full flex justify-between items-center h-full">
             {/* Logo/Brand */}
-            <motion.div variants={itemVariants}>
-              <FullLogo />
-            </motion.div>
+            <div className="w-full max-w-[275px]">
+              <motion.div variants={itemVariants}>
+                <FullLogo />
+              </motion.div>
+            </div>
 
-            {/** Title? TODO: Clarify what this is from designer or timi */}
-            <motion.div className="flex-1" variants={itemVariants}>
-              <p className="text-text-light/70 dark:text-text-dark/70 text-sm text-center">
-                Judging Creative Onchain Hackathon
-              </p>
-            </motion.div>
+            <div className="flex-1 px-4 lg:px-8 flex flex-row items-center gap-8 justify-between">
+              {/** Title? TODO: Clarify what this is from designer or timi */}
+              <motion.div className="" variants={itemVariants}>
+                <p className="text-text-light/70 dark:text-text-dark/70 text-sm text-center">
+                  SLA (Service Level Agreement) with AWS
+                </p>
+              </motion.div>
 
-            {/** Actions */}
-            <motion.div
-              className="flex flex-row items-center gap-6"
-              variants={itemVariants}
-            >
-              {/** TODO: Wrap with Icon Button */}
-              <SearchIcon className="text-text-light dark:text-text-dark" />
-
-              <Interaction
-                ref={avatarRef}
-                onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="w-fit h-fit bg-transparent outline-none border-none"
-                title="Profile"
-                type="button"
-                disabled={!user}
+              {/** Actions */}
+              <motion.div
+                className="flex flex-row items-center gap-10"
+                variants={itemVariants}
               >
-                <CircleAvatar src={defaultAvatar} size={32} />
-              </Interaction>
-            </motion.div>
+                {/** TODO: Wrap with Icon Button */}
+
+                <div className="rounded-[33px] bg-[#EBEBEB] text-[#111111B2] flex flex-row items-center gap-[8px] py-[10px] px-[14px] min-w-[304px]">
+                  <SearchIcon className="" />
+
+                  <input
+                    placeholder="Search your dashboard"
+                    type="text"
+                    className="outline-none bg-none text-[12px] leading-[16px] font-medium"
+                  />
+                </div>
+
+                <Interaction
+                  ref={avatarRef}
+                  onClick={() => setIsMenuOpen((prev) => !prev)}
+                  className="w-fit h-fit bg-transparent outline-none border-none"
+                  title="Profile"
+                  type="button"
+                  disabled={!user}
+                >
+                  <div className="flex flex-row items-center gap-4">
+                    <CircleAvatar src={defaultAvatar} size={40} />
+
+                    <div className="flex flex-col items-start font-normal">
+                      <p className="font-semibold">John Doe</p>
+                      <p className="text-[#344054]">Welcome back</p>
+                    </div>
+                  </div>
+                </Interaction>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.div>

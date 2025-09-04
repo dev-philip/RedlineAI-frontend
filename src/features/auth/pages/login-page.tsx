@@ -13,20 +13,13 @@ export const LoginPage = () => {
       <div className="flex-1">
         <div className="flex flex-col items-center justify-center h-full px-8">
           <div className="max-w-[510px]">
-            <h3 className="text-[40px] font-bold text-start leading-normal">
-              Join{" "}
-              <span className="text-text-light/40 dark:text-text-dark/40">
-                the
-              </span>{" "}
-              BIOHackathon{" "}
-              <span className="text-text-light/40 dark:text-text-dark/40">
-                Platform
-              </span>
+            <h3 className="text-[40px] font-bold text-start leading-normal text-[#b84dac]">
+              <span className="text-[#ef4ddb]">Welcome to Redline</span> AI
             </h3>
             <p className="text-[20px] text-text-light/40 dark:text-text-dark/40">
-              Explore, build, and contribute to the future of AI + Bio
-              innovation. Whether you're a developer, researcher, or curious
-              mind — you're welcome here.
+              Review contracts in minutes, not hours.
+              <br /> Whether you're a creative, researcher, small business owner
+              or curious mind — you're welcome here.
             </p>
 
             <div className="mt-8">

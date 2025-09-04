@@ -1,15 +1,17 @@
-import { ChatLayout, PromptChat, PromptResult } from "../components";
+import { GradientParagraph } from "@/components/ui/gradient-paragraph";
+import { ChatLayout } from "../components";
+import { FileUploader } from "../components/file-uploader";
 
 export const ChatPage = () => {
   return (
     <ChatLayout>
       <div className="flex flex-row gap-12 h-full w-full">
-        <div className="h-full flex-1 max-w-[252px]">
-          <PromptChat />
-        </div>
+        <div className="mx-auto w-full pt-20">
+          <GradientParagraph className="text-[40px] font-semibold text-center leading-normal">
+            Welcome to Redline AI
+          </GradientParagraph>
 
-        <div className="h-full flex-1 mt-auto">
-          <PromptResult />
+          <FileUploader />
         </div>
       </div>
     </ChatLayout>

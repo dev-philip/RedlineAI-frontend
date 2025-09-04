@@ -6,11 +6,15 @@ export const AuthLayout = () => {
   const { isAuthenticated, isLoading } = useAuthStore();
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   if (isAuthenticated && !isLoading) {
+  //     navigate("/");
+  //   }
+  // }, [isAuthenticated, isLoading, navigate]);
+
   useEffect(() => {
-    if (isAuthenticated && !isLoading) {
-      navigate("/");
-    }
-  }, [isAuthenticated, isLoading, navigate]);
+    navigate("/");
+  }, [navigate]);
 
   if (isLoading) return <div>Loading...</div>;
   if (isAuthenticated) return null;
