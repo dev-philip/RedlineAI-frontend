@@ -8,10 +8,17 @@ const ChatPage = React.lazy(() =>
   }))
 );
 
+const ExtractedClausesPage = React.lazy(() =>
+  import("@/features/chat").then((module) => ({
+    default: module.ExtractedClausesPage,
+  }))
+);
+
 export const MainRoutes = () => {
   return (
     <Route path="/" element={<DashboardLayout />}>
       <Route index element={<ChatPage />} />
+      <Route path="extracted-clauses" element={<ExtractedClausesPage />} />
     </Route>
   );
 };
