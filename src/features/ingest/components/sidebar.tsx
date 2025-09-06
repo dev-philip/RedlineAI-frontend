@@ -46,7 +46,7 @@ const buttonGroupVariants = {
   },
 };
 
-export const ChatSideBar: React.FC = () => {
+export const SideBar: React.FC = () => {
   const [activePrevious] = useState<number>(0);
 
   return (

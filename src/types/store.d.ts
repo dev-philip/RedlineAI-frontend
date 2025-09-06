@@ -1,4 +1,4 @@
-import type { User } from "./models";
+import type { Clause, User } from "./models";
 
 export type AuthState = {
   user: User | null;
@@ -14,4 +14,19 @@ export type AuthActions = {
   logout: () => void;
   setUser: (user: User) => void;
   clearError: () => void;
+};
+
+export type IngestState = {
+  clauses: Clause[];
+  selectedClause: Clause | null;
+};
+
+export type IngestActions = {
+  loadClauses: () => Promise<void>;
+  uploadFiles: (
+    files: File[],
+    user_id: string | null,
+    onProgress?: (progress: number) => void
+  ) => Promise<void>;
+  selectClause: (clauseId: string | null) => void;
 };

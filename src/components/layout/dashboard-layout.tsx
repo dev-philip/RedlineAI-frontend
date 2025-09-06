@@ -7,14 +7,14 @@ export const DashboardLayout = () => {
   const { isAuthenticated, isLoading } = useAuthStore();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!isLoading && !isAuthenticated) {
-  //     navigate("/auth/login");
-  //   }
-  // }, [isAuthenticated, isLoading, navigate]);
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      navigate("/auth/login");
+    }
+  }, [isAuthenticated, isLoading, navigate]);
 
   if (isLoading) return <div>Loading...</div>;
-  // if (!isAuthenticated) return null;
+  if (!isAuthenticated) return null;
 
   return (
     <div className="h-screen overflow-hidden bg-background-light dark:bg-background-dark">

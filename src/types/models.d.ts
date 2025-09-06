@@ -1,8 +1,18 @@
+import type { RiskLevel } from "@/utils/enums";
+
 export type User = {
   id: string;
   name: string;
   email: string;
   avatar?: string;
+};
+
+export type Clause = {
+  id: string;
+  title: string;
+  description: string;
+  label: string;
+  risk_level: RiskLevel;
 };
 
 // Represents messages in a thread

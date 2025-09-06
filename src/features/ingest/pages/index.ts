@@ -1,2 +1,2 @@
-export * from "./chat-page";
+export * from "./ingest";
 export * from "./extracted-clauses";

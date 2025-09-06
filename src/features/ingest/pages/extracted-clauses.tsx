@@ -1,5 +1,5 @@
 import SearchIcon from "@/assets/images/svg/search-normal.svg";
-import { ChatLayout } from "../components";
+import { IngestLayout } from "../components";
 import { Dropdown } from "@/components/ui/dropdown";
 import { RiskLevel } from "@/utils/enums";
 import { Clause } from "../components/clause";
@@ -44,7 +44,7 @@ export const ExtractedClausesPage = () => {
   };
 
   return (
-    <ChatLayout>
+    <IngestLayout>
       {/* Parent flex container now animated with layout */}
       <motion.div
         className={classNames("w-full flex flex-row gap-20", {
@@ -185,6 +185,6 @@ export const ExtractedClausesPage = () => {
           )}
         </AnimatePresence>
       </motion.div>
-    </ChatLayout>
+    </IngestLayout>
   );
 };
