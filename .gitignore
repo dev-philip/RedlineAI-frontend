@@ -24,3 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 .yarn
+
+
+# Custom Files
+dependency.md
+src/utils/constants.ts
